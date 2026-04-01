@@ -2,6 +2,8 @@
 
 Welcome to my personal cloud-powered portfolio website hosted on **Google Cloud Platform (GCP)** — complete with **Terraform-managed infrastructure**, a **Cloud Function visitor counter**, **HTTPS**, and **CI/CD** via **GitHub Actions**.
 
+This repo is for terraform code and gcp infrastructure
+
 🔗 Live Site: [https://anushrey.dev](https://anushrey.dev)(Not Live)
 
 ---
