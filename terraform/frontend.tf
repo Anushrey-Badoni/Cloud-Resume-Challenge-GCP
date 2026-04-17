@@ -18,9 +18,7 @@ resource "google_storage_bucket_iam_binding" "public_access" {
 resource "google_storage_bucket_object" "files" {
   for_each = toset(
     concat(
-      tolist(fileset("../frontend", "*.html")),
-      tolist(fileset("../frontend", "*.css")),
-      tolist(fileset("../frontend", "*.js"))
+      tolist(fileset("../frontend", "*.html"))
     )
   )
   name     = each.value
@@ -28,7 +26,5 @@ resource "google_storage_bucket_object" "files" {
   bucket   = google_storage_bucket.resume_bucket.name
   content_type = lookup({
     html = "text/html"
-    css  = "text/css"
-    js   = "application/javascript"
   }, split(".", each.value)[length(split(".", each.value)) - 1], "application/octet-stream")
 }
